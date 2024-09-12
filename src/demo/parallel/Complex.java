@@ -99,11 +99,13 @@ public class Complex {
         return new Complex(this.re - other.re, this.im - other.im);
     }
 
-    // Деление
-    public Complex divide(Complex other) {
-        double denominator = other.re * other.re + other.im * other.im;
-        double newReal = (this.re * other.re + this.im * other.im / denominator);
-        double newImaginary = (this.im * other.re - this.re * other.im) / denominator;
-        return new Complex(newReal, newImaginary);
+    // Метод для получения реальной части
+    public double getReal() {
+        return re;
+    }
+
+    // Метод для получения мнимой части
+    public double getImaginary() {
+        return im;
     }
 }
