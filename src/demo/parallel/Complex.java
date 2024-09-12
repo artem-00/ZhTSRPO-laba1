@@ -93,4 +93,17 @@ public class Complex {
     public double lengthSQ() {
         return re * re + im * im;
     }
+
+    // Вычитание
+    public Complex minus(Complex other) {
+        return new Complex(this.re - other.re, this.im - other.im);
+    }
+
+    // Деление
+    public Complex divide(Complex other) {
+        double denominator = other.re * other.re + other.im * other.im;
+        double newReal = (this.re * other.re + this.im * other.im / denominator);
+        double newImaginary = (this.im * other.re - this.re * other.im) / denominator;
+        return new Complex(newReal, newImaginary);
+    }
 }
